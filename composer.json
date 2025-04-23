@@ -1,0 +1,21 @@
+{
+  "name": "steve/app-salon_php_mvc_js_sass",
+  "description": "sgsg",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "MVC\\": "./",
+      "Controllers\\": "./controllers",
+      "Model\\": "./models",
+      "Classes\\": "./classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "steven"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
