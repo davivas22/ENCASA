@@ -1,5 +1,5 @@
 <?php
-
+// SAMUEL CEROTE
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -56,7 +56,7 @@ class Correo{
         // Crear el contenido del correo
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . " </strong> Has creado tu cuenta en ENCASA, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmarcuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
+        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3001/confirmarcuenta?token=" . $this->token . "'>Confirmar cuenta</a></p>";
         $contenido .= "<p>Si tú no solicitaste esta cuenta, puedes ignorar el mensaje.</p>";
         $contenido .= "</html>";
         $mail->Body = $contenido;

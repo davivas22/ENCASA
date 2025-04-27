@@ -12,26 +12,24 @@ class loginController{
         $alertas =[];
         if ($_SERVER['REQUEST_METHOD']==='POST'){
             $auth = new usuario($_POST);
-            
             $alertas = $auth -> validarlogin();
             if (empty($alertas)){
                 //comprobar que exista el usuario
                 $usuario = Usuario::where('email',$auth-> email);
-                debuguear($usuario);
                 if($usuario){
                     //verificar el password
                     if($usuario->comprobarPasswordAndVerificado($auth->contrasena)){
                         session_start();
                         $_SESSION['id'] = $usuario->id; 
-                        $_SESSION['nombre']= $suario->nombre."". $usuario->apellido;
+                        $_SESSION['nombre']= $usuario->nombre."". $usuario->apellido;
                         $_SESSION ['email'] = $usuario->email;
                         $_SESSION['login'] = true;
                         //Redirreccionamiento
                         if($usuario->admin === "1"){
                             $_SESSION['admin']=$usuario-> admin ?? null;
-                            header('Location/admin');
+                            header('Location: /admin');
                         }else{
-                            header('Location: /cita');
+                            header('Location: /');
                         }
 
                         debuguear($_SESSION);
@@ -120,8 +118,9 @@ class loginController{
 
         $alertas=[];
         $token=s($_GET['token']);
-      $usuario= usuario::where('token',$token);
-
+      $usuario= usuario::where('token', $token);
+ 
+      
       if(empty($usuario)){
         usuario::setAlerta('error', 'Token no valido');
       }else{
@@ -129,8 +128,10 @@ class loginController{
         $usuario->token = null;
         $usuario->guardar();
         usuario::setAlerta('exito','Cuenta comprobada Correctamente');
-
-
+        session_start();
+        $_SESSION['confirmado'] = 'Cuenta confirmada correctamente';
+        header('location:/login');
+        exit;
       }
 
 

@@ -50,15 +50,18 @@ class ActiveRecord {
     // Crea el objeto en memoria que es igual al de la BD
     protected static function crearObjeto($registro) {
         $objeto = new static;
-
+    
+        
+    
         foreach($registro as $key => $value ) {
-            if(property_exists( $objeto, $key  )) {
+            if(property_exists($objeto, $key)) {
                 $objeto->$key = $value;
             }
         }
-
+    
         return $objeto;
     }
+    
 
     // Identificar y unir los atributos de la BD
     public function atributos() {
@@ -74,7 +77,13 @@ class ActiveRecord {
     public function sanitizarAtributos() {
         $atributos = $this->atributos();
         $sanitizado = [];
-        foreach($atributos as $key => $value ) {
+        foreach ($atributos as $key => $value) {
+            // Si el valor es null, asigna una cadena vacía
+            if ($value === null) {
+                $value = '';  // o cualquier valor predeterminado que desees
+            }
+    
+            // Sanitizar el valor (ahora seguro que no es null)
             $sanitizado[$key] = self::$db->escape_string($value);
         }
         return $sanitizado;
@@ -110,11 +119,25 @@ class ActiveRecord {
     }
 
     // Busca un registro por su id
-    public static function where ($columna, $valor) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE {$columna} = '{$valor}'";
+    public static function where($columna, $valor) {
+        // Limpiar el valor recibido
+        $valor = trim($valor); // Eliminar espacios extra al inicio o final
+    
+        // Verificar que $valor no sea null antes de escapar
+        if ($valor !== null) {
+            $valor = self::$db->real_escape_string($valor);
+        } else {
+            // En caso de que sea null, asignar un valor predeterminado
+            $valor = '';
+        }
+    
+        // Realizar la consulta SQL con TRIM() para eliminar espacios al comparar
+        $query = "SELECT * FROM " . static::$tabla . " WHERE TRIM({$columna}) = '{$valor}'";
         $resultado = self::consultarSQL($query);
-        return array_shift( $resultado ) ;
+        
+        return array_shift($resultado);  // Devolver el primer registro
     }
+    
 
     // Obtener Registros con cierta cantidad
     public static function get($limite) {
@@ -147,23 +170,25 @@ class ActiveRecord {
     public function actualizar() {
         // Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
-
-        // Iterar para ir agregando cada campo de la BD
+    
+        // Preparar cada campo para el SET
         $valores = [];
         foreach($atributos as $key => $value) {
-            $valores[] = "{$key}='{$value}'";
+            $valorEscapado = self::$db->escape_string($value ?? '');
+            $valores[] = "{$key} = '{$valorEscapado}'";
         }
-
+    
         // Consulta SQL
-        $query = "UPDATE " . static::$tabla ." SET ";
-        $query .=  join(', ', $valores );
+        $query = "UPDATE " . static::$tabla . " SET ";
+        $query .= join(', ', $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
-        $query .= " LIMIT 1 "; 
-
+        $query .= " LIMIT 1";
+    
         // Actualizar BD
         $resultado = self::$db->query($query);
         return $resultado;
     }
+    
 
     // Eliminar un Registro por su ID
     public function eliminar() {

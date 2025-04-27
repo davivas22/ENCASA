@@ -11,6 +11,8 @@ $router = new Router();
 //iniciar sesion
 $router->get('/login',[loginController::class,'login'] );
 $router->post('/login',[loginController::class,'login'] );
+
+//CERRAR SESION
 $router->get('/logout',[loginController::class,'logout'] );
 
 //recuperar password

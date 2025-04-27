@@ -17,7 +17,7 @@ class usuario extends ActiveRecord{
     public $token;
 
     public function __construct($args = []){
-        $this->id =$args['id']??null;
+        $this->id =$args['id']?? null;
         $this->nombre=$args['nombre']?? '';
         $this->apellido =$args['apellido']?? '';
         $this->email =$args['email']?? '';
@@ -79,9 +79,10 @@ class usuario extends ActiveRecord{
         $this->contrasena =password_hash($this->contrasena,PASSWORD_BCRYPT);
        }
 
-       public function crearToken (){
-        $this->token = uniqid();
-       }
+       public function crearToken() {
+        $this->token = trim(bin2hex(random_bytes(13)));
+    }
+    
        
        public function comprobarPasswordAndVerificado($contrasena){
         $resultado = password_verify($contrasena, $this->contrasena);

@@ -1,4 +1,9 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 
+?>
 
 </head>
 <body>
@@ -14,7 +19,7 @@
                   <li><a href="/contacto">Contacto</a></li>
               </ul>
           </div>
-          
+       
           <div class="auth-menu">
               <ul>
                   <li><a href="/login" class="login">Iniciar sesión</a></li>
