@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\AdminController;
+use Controllers\HomeController;
 use Controllers\loginController;
 use MVC\Router;
 
@@ -32,14 +33,21 @@ $router->get('/confirmarcuenta', [loginController::class,'confirmar']);
 $router->get('/mensaje', [loginController::class,'mensaje']);
 
 
-//PAGINA PRINCIPAL
+//PAGINA PRINCIPAL HOME CONTROLLER
 
 $router->get('/', [loginController::class, 'index']);
 
-//nosotros
+//ABOUT
 
-$router->get('/nosotros',[loginController::class,'nosotros']);
-// Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
+$router->get('/about',[HomeController::class,'about']);
+$router->post('/about',[HomeController::class,'about']);
+
+//CONTACTO
+
+$router->get('/contacto',[HomeController::class,'contacto']);
+$router->post('/contacto',[HomeController::class,'contacto']);
+
+
 
 
 
@@ -59,7 +67,7 @@ $router->post('/propiedades',[AdminController::class,'propiedades']);
 
 
 
-
+// TODO ARRIBA DE ESTE CODIGO Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
 
 

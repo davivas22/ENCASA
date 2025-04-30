@@ -16,17 +16,31 @@ ob_start();
             <nav>
                 <ul class="menu">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Propiedades</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/about">Acerca de</a></li>
+                    <li><a href="/propiedades">Propiedades</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
                     <?php if(!isset($_SESSION['login'])): ?>
                     <li><a href="/login" class="contact-btn">Iniciar sesión</a></li>
                     <?php else: ?>
-                      <li><a href="/cerrarsesion" class="contact-btn">Cerrar sesión</a></li>
-
+                        <div class="menu-usuario">
+                        <details class="detalles-usuario">
+                            <summary class="boton-perfil">
+                            <img src="/img/profile-icon-design-free-vector.jpg" alt="Foto de perfil" class="foto-perfil">
+                            </summary>
+                            <ul class="lista-opciones">
+                            <li><a href="/perfil"><i class="fas fa-user"></i> Mi perfil</a></li>
+                            <li><a href="/favoritos"><i class="fas fa-heart"></i> Mis favoritos</a></li>
+                            <li><a href="/mensajes"><i class="fas fa-envelope"></i> Mensajes</a></li>
+                            <li><a href="/propiedades"><i class="fas fa-home"></i> Mis propiedades</a></li>
+                            <li><a href="/configuracion"><i class="fas fa-cog"></i> Configuración</a></li>
+                            <li><a href="/cerrarsesion" class="contact-btn">Cerrar sesión</a></li>
+                            </ul>
+                        </details>
+                        </div>
                       <?php endif;?>
                 </ul>
             </nav>
+         
         </header>
         
         <div class="hero-content">

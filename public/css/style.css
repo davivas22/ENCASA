@@ -1597,6 +1597,22 @@ header {
   }
 }
 
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.user-dropdown-btn.clicked {
+  animation: buttonClick 0.3s ease;
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(50px);
@@ -1899,4 +1915,115 @@ header {
 /* Eliminar los estilos de los controles de velocidad ya que no se usarán */
 .speed-controls {
   display: none;
+}
+/* Estilos para el menú de usuario con nombres en español */
+.menu-usuario {
+  position: relative;
+  margin-left: 20px;
+}
+
+.detalles-usuario {
+  position: relative;
+}
+
+/* Quitar el triángulo nativo de details */
+.detalles-usuario summary {
+  list-style: none;
+}
+.detalles-usuario summary::-webkit-details-marker {
+  display: none;
+}
+
+.boton-perfil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.boton-perfil:hover {
+  border-color: var(--color-coffee-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.foto-perfil {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lista-opciones {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  list-style: none;
+  margin: 0;
+  z-index: 1000;
+}
+
+/* Triángulo indicador */
+.lista-opciones::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-white);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.lista-opciones li {
+  margin: 0;
+  padding: 0;
+}
+
+.lista-opciones li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.lista-opciones li a i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-coffee);
+}
+
+.lista-opciones li a:hover {
+  background-color: var(--color-gray-light);
+}
+
+.item-cerrar-sesion {
+  border-top: 1px solid var(--color-gray-medium);
+  margin-top: 5px;
+}
+
+.item-cerrar-sesion a {
+  color: var(--color-error) !important;
+}
+
+.item-cerrar-sesion a i {
+  color: var(--color-error) !important;
 }

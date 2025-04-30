@@ -4,7 +4,7 @@ namespace Model;
 class usuario extends ActiveRecord{
     //base de datos
     protected static $tabla = 'registrousuarios';
-    protected static $columnasDB =['id','nombre','apellido','email','contrasena','telefono','admin','confirmado','token'];
+    protected static $columnasDB =['id','nombre','apellido','email','contrasena','telefono','rol','confirmado','token'];
 
     public $id;
     public $nombre;
@@ -12,7 +12,7 @@ class usuario extends ActiveRecord{
     public $email;
     public $contrasena;
     public $telefono;
-    public $admin;
+    public $rol;
     public $confirmado;
     public $token;
 
@@ -23,7 +23,7 @@ class usuario extends ActiveRecord{
         $this->email =$args['email']?? '';
         $this->contrasena =$args['contrasena']?? '';
         $this->telefono =$args['telefono']?? '';
-        $this->admin =$args['admin']?? '0';
+        $this->rol =$args['rol']?? 'usuario';
         $this->confirmado =$args['confirmado']?? '0';
         $this->token =$args['token']?? '';
 
