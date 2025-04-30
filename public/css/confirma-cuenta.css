@@ -1,0 +1,211 @@
+/* Variables y Reset */
+:root {
+  --color-coffee-light: #b08d57;
+  --color-coffee: #8d6e63;
+  --color-coffee-dark: #5d4037;
+  --color-coffee-pale: #d7ccc8;
+  --color-coffee-accent: #a1887f;
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --border-radius-sm: 0.125rem;
+  --border-radius: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+  --border-radius-2xl: 1rem;
+  --border-radius-full: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-800);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-coffee);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-coffee-dark);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+/* Confirmation Card */
+.confirmation-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  padding: 2rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-coffee-dark);
+  margin: 0;
+}
+
+.logo .tagline {
+  font-size: 0.875rem;
+  color: var(--color-coffee);
+  margin-top: -5px;
+}
+
+/* Confirmation Content */
+.confirmation-content {
+  padding: 1.5rem 2rem 2.5rem;
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-coffee-pale);
+  color: var(--color-coffee-dark);
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.icon-container i {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.confirmation-message {
+  font-size: 1.125rem;
+  color: var(--color-gray-700);
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-message strong {
+  color: var(--color-coffee-dark);
+}
+
+.additional-info {
+  background-color: var(--color-gray-50);
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-gray-600);
+}
+
+.additional-info p {
+  margin-bottom: 0.5rem;
+}
+
+.additional-info p:last-child {
+  margin-bottom: 0;
+}
+
+.small {
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-coffee-light);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--color-coffee-dark);
+  color: var(--color-white);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .confirmation-card {
+    max-width: 100%;
+  }
+
+  .confirmation-content {
+    padding: 1.25rem 1.5rem 2rem;
+  }
+
+  .icon-container {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.25rem;
+  }
+
+  .icon-container i {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .confirmation-message {
+    font-size: 1rem;
+  }
+}

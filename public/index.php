@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
-
+use Controllers\AdminController;
 use Controllers\loginController;
 use MVC\Router;
 
@@ -13,7 +13,8 @@ $router->get('/login',[loginController::class,'login'] );
 $router->post('/login',[loginController::class,'login'] );
 
 //CERRAR SESION
-$router->get('/logout',[loginController::class,'logout'] );
+$router->get('/cerrarsesion', [loginController::class,'cerrarsesion'] );
+
 
 //recuperar password
 $router->get('/olvide',[loginController::class,'olvide'] );
@@ -39,5 +40,28 @@ $router->get('/', [loginController::class, 'index']);
 
 $router->get('/nosotros',[loginController::class,'nosotros']);
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
+
+
+
+//ADMINISTRADOR
+
+$router->get('/admin-panel',[AdminController::class,'panel']);
+$router->post('/admin-panel',[AdminController::class,'panel']);
+
+//PROPIEDAD
+
+$router->get('/propiedades',[AdminController::class,'propiedades']);
+$router->post('/propiedades',[AdminController::class,'propiedades']);
+
+
+
+
+
+
+
+
 $router->comprobarRutas();
+
+
+
 

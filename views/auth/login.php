@@ -1,104 +1,107 @@
-
-  <?php 
-  if(isset($_SESSION['confirmado'])): ?>
-
-    <div class="alerta exito">
-            <?php 
-            echo $_SESSION['confirmado'];
-            unset($_SESSION['confirmado']); // Para que solo salga una vez
-            ?>
-        </div>
-<?php endif; ?>
-
-
-
-
-
-
-
-
-<svg
-      class="login__blob"
-      viewBox="0 0 880.6 924"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <mask id="mask0" mask-type="alpha">
-        <path
-          d="M376.647 80.9946C427.383 62.0407 433.816 19.1007 428.692 
-          0H622V924H0C16.9924 918.490 110.292 884.779 84.9249 778.989C54.6032 
-          650.221 126.836 570.819 194.115 537.760C399.724 436.728 172.678 332.706 
-          184.739 197.252C190.806 128.929 313.230 104.686 376.647 80.9946Z"
-        />
-      </mask>
-
-      <g mask="url(#mask0)" transform="scale(1.4)">
-        <path
-          d="M376.647 80.9946C427.383 62.0407 433.816 19.1007 428.692 
-              0H622V924H0C16.9924 918.490 110.292 884.779 84.9249 778.989C54.6032 
-              650.221 126.836 570.819 194.115 537.760C399.724 436.728 172.678 332.706 
-              184.739 197.252C190.806 128.929 313.230 104.686 376.647 80.9946Z"
-        />
-
-        <!-- Insert your image (recommended size: 1100 x 1320) -->
-        <image
-          class="login__img"
-          href="../../src/img/Beige Brown Minimal Modern Aesthetic Fashion Clothes Brand Sales Collage Presentation.svg"
-        />
-      </g>
-    </svg>
-
-    <!--=============== LOGIN ===============-->
-    <div class="login container grid" id="loginAccessRegister">
-      <!--===== LOGIN ACCESS =====-->
-      <div class="login__access">
-        <h1 class="login__title">Iniciar sesion</h1>
-        <div class="login__area">
-          <form action="/login" class="login__form" method="post">
-            <div class="login__content grid">
-              <div class="login__box">
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  placeholder=" "
-                  class="login__input"
-                  name="email"
-                />
-                <label for="email" class="login__label">Correo</label>
-
-                <i class="ri-mail-fill login__icon"></i>
-              </div>
-
-              <div class="login__box">
-                <input
-                  type="password"
-                  id="password"
-                  required
-                  placeholder=" "
-                  class="login__input"
-                  name="contrasena"
-                />
-                <label for="password" class="login__label">Contraseña</label>
-
-                <i
-                  class="ri-eye-off-fill login__icon login__password"
-                  id="loginPassword"
-                ></i>
-              </div>
+<?php
+$pageStylesheet = '/css/auth.css';
+$pageScript = '/js/script.js';
+ob_start();
+// Todo el contenido de la página
+?>
+    <div class="auth-page">
+        <!-- Mitad izquierda: Formulario -->
+        <div class="auth-form-side">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>ENCASA</h1>
+                    <p class="tagline">Tu mejor solución para el hogar</p>
+                </div>
+            </a>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Iniciar sesión</h2>
+                    <p>Bienvenido de nuevo, ingresa tus credenciales</p>
+                </div>
+                
+                <form class="auth-form" action="/login" method="post">
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="contrasena" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Recordarme</label>
+                        </div>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth">Iniciar Sesión</button>
+                    
+                    <div class="social-login">
+                        <div class="divider">
+                            <span>O continúa con</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-apple"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>¿No tienes una cuenta? <a href="/crearcuenta">Regístrate</a></p>
+                </div>
             </div>
-
-            <a href="/olvide" class="login__forgot">olvidaste tu contraseña?</a>
-
-            <input type="submit" value="INICIAR" class="login__button">
-          </form>
-
-          <p class="login__switch">
-            No tienes una cuenta?
-            <a href="/crearcuenta">crea una cuenta</a>
-          </p>
         </div>
-      </div>
-
-      <!--===== LOGIN REGISTER =====-->
-      
+        
+        <!-- Mitad derecha: Slider automático -->
+        <div class="slider-side">
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Las slides se generarán dinámicamente con JavaScript -->
+                </div>
+                
+              
+                
+                <div class="slider-controls">
+                    <div class="slider-dots" id="sliderDots">
+                        <!-- Los dots se generarán dinámicamente -->
+                    </div>
+                    <div class="slider-arrows">
+                        <button class="slider-arrow prev-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-arrow next-arrow">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <a href="/">Home</a>
+                <a href="#">Propiedades</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
     </div>

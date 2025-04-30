@@ -1,131 +1,131 @@
+<?php
+$pageStylesheet = '/css/auth.css';
+$pageScript = '/js/auth-script.js';
+ob_start();
+// Todo el contenido de la página
+?>
 
-<style>
-
-
-
-
-/********************FORMULARIO PARA CREAR CUENTA *****************/
-</style>
-
-    <!--=============== LOGIN IMAGE ===============-->
-    <svg
-      class="login__blob"
-      viewBox="0 0 850.6 924"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <mask id="mask0" mask-type="alpha">
-        <path
-          d="M376.647 80.9946C427.383 62.0407 433.816 19.1007 428.692 
-          0H622V924H0C16.9924 918.490 110.292 884.779 84.9249 778.989C54.6032 
-          650.221 126.836 570.819 194.115 537.760C399.724 436.728 172.678 332.706 
-          184.739 197.252C190.806 128.929 313.230 104.686 376.647 80.9946Z"
-        />
-      </mask>
-
-      <g mask="url(#mask0)" transform="scale(1.4)">
-        <path
-          d="M376.647 80.9946C427.383 62.0407 433.816 19.1007 428.692 
-              0H622V924H0C16.9924 918.490 110.292 884.779 84.9249 778.989C54.6032 
-              650.221 126.836 570.819 194.115 537.760C399.724 436.728 172.678 332.706 
-              184.739 197.252C190.806 128.929 313.230 104.686 376.647 80.9946Z"
-        />
-
-        <!-- Insert your image (recommended size: 1100 x 1320) -->
-       
-        <image  class="login__img" href="https://images.adsttc.com/media/images/59b0/06e1/b22e/3848/cc00/005f/newsletter/AdCo_Paisajes.jpg?1504708319" alt="Imagen SVG" />
-
-      </g>
-    </svg>
-
-    <!--=============== REGISTRO ===============-->
-    <div class="login container grid" id="loginAccessRegister">
-      <!--===== LOGIN ACCESS =====-->
-      <div class="login__access">
-        <h1 class="login__title">Crear nueva cuenta</h1>
-
-        <?php ?>
-
-        <div class="login__area">
-          <form action="/crearcuenta" class="login__form" method="POST">
-            <div class="login__content grid">
-              <div class="login__box">
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder=" "
-                  value="<?php echo s($usuario->nombre); ?>"
-                  class="login__input"
-                />
-                <label for="email" class="login__label">Nombre</label>
-
-              </div>
-
-              <div class="login__box">
-                  <input
-                    type="text"
-                    id="apellido"
-                    name="apellido"
-                    placeholder=" "
-                    value="<?php echo s($usuario->apellido); ?>"
-                    class="login__input"
-                  />
-                  <label for="email" class="login__label">Apellidos</label>
-  
+<div class="auth-page">
+        <!-- Mitad izquierda: Formulario -->
+        <div class="auth-form-side">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>ENCASA</h1>
+                    <p class="tagline">Tu mejor solución para el hogar</p>
                 </div>
-
-                <div class="login__box">
-                  <input
-                    type="tel"
-                    id="tel"
-                    name="telefono"
-                    placeholder=" "
-                    value="<?php echo s($usuario->telefono); ?>"
-                    class="login__input"
-                  />
-                  <label for="email" class="login__label">Numero telefonico</label>
-  
-                </div>
-        
-                <div class="login__box">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder=" "
-                    value="<?php echo s($usuario->email); ?>"
-                    class="login__input"
-                  />
-                  <label for="email" class="login__label">Email</label>
-  
-                  <i class="ri-mail-fill login__icon"></i>
+            </a>
+            
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Crear cuenta</h2>
+                    <p>Únete a nuestra comunidad y encuentra tu hogar ideal</p>
                 </div>
                 
-
-              <div class="login__box">
-                <input
-                  type="password"
-                  id="password"
-                  name="contrasena"
-                  placeholder=" "
-                  class="login__input"
-                />
-                <label for="password" class="login__label">Password</label>
-
-                <i
-                  class="ri-eye-off-fill login__icon login__password"
-                  id="loginPassword"
-                ></i>
-              </div>
-             </div>
-          
-
-               <input type="submit" value="Crear cuenta" class="login__button">
-          </form>
-
-          <p class="login__switch">
-           Ya tienes una cuenta?
-            <a href="/login">Inicia sesion</a>
-          </p>
+                <form class="auth-form" method="post" action="/crearcuenta">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="firstname">Nombres</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstname" name="nombre">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="lastname">Apellidos</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastname" name="apellido">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Número telefónico</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="telefono">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="contrasena">
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="terms-conditions">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Acepto los <a href="#">Términos y Condiciones</a></label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth">Crear Cuenta</button>
+                    
+                    <div class="social-login">
+                        <div class="divider">
+                            <span>O regístrate con</span>
+                        </div>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-apple"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+                </div>
+            </div>
         </div>
-      </div>
+        
+        <!-- Mitad derecha: Slider automático -->
+        <div class="slider-side">
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Las slides se generarán dinámicamente con JavaScript -->
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dots" id="sliderDots">
+                        <!-- Los dots se generarán dinámicamente -->
+                    </div>
+                    <div class="slider-arrows">
+                        <button class="slider-arrow prev-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-arrow next-arrow">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <a href="index.html">Home</a>
+                <a href="#">Propiedades</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </div>

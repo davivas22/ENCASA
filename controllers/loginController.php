@@ -27,7 +27,7 @@ class loginController{
                         //Redirreccionamiento
                         if($usuario->admin === "1"){
                             $_SESSION['admin']=$usuario-> admin ?? null;
-                            header('Location: /admin');
+                            header('Location: /admin-panel');
                         }else{
                             header('Location: /');
                         }
@@ -45,10 +45,7 @@ class loginController{
         $router->render('auth/login');
 
     }
-    public static function logout(){
-        echo 'desde logout';
-
-    }
+    
     
     public static function index(Router $router){
         $router->render('auth/index');
@@ -139,4 +136,14 @@ class loginController{
 
        
     }
+
+    public static function cerrarsesion(Router $router){
+
+
+        session_start();
+        session_destroy();
+        header('location:/');
+
+     }
+
 }
