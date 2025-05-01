@@ -32,17 +32,9 @@
             <div class="content-wrapper">
                 <!-- Tabs -->
                 <div class="tabs-container">
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="active-agents">Agentes Activos <span class="badge">0</span></button>
-                        <a href="/solicitudes" class="tab-btn">
-                        Solicitudes <span class="badge">0</span>
-                        </a>
-
-                    </div>
+                   
                     
-                    <button class="btn-primary" id="addAgentBtn">
-                        <i class="fas fa-plus"></i> Agregar Agente
-                    </button>
+                    
                 </div>
                 <?php foreach($solicitudes as $solicitud): ?>
                     <?php $usuario = $solicitud->getUsuario(); ?>

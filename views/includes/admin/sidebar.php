@@ -18,7 +18,7 @@
                 </div>
                 <div class="admin-info">
                     <h3>Administrador</h3>
-                    <p>Super Admin</p>
+                    <p><?= $_SESSION['nombre'];?></p>
                 </div>
             </div>
 

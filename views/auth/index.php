@@ -128,10 +128,19 @@ ob_start();
                             <label>Ubicación</label>
                             <select>
                                 <option>Todas las zonas</option>
-                                <option>Zona Rosa</option>
-                                <option>Ilopango</option>
-                                <option>Santa Tecla</option>
-                                <option>San Salvador</option>
+                                <option value="ahuachapan">Ahuachapán</option>
+                                <option value="sonsonate">Sonsonate</option>
+                                <option value="santa-ana">Santa Ana</option>
+                                <option value="la-libertad">La Libertad</option>
+                                <option value="san-salvador">San Salvador</option>
+                                <option value="cuscatlan">Cuscatlán</option>
+                                <option value="san-vicente">San Vicente</option>
+                                <option value="cabanas">Cabañas</option>
+                                <option value="usulutan">Usulutan</option>
+                                <option value="san-miguel">San Miguel</option>
+                                <option value="morazan">Morazán</option>
+                                <option value="la-paz">La Paz</option>
+                                <option value="la-union">La union</option>
                             </select>
                         </div>
                         <div class="search-group">
@@ -217,7 +226,7 @@ ob_start();
             <div class="properties-grid">
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="architecture-interior-design.jpeg" alt="Propiedad en Zona Rosa">
+                        <img src="https://imgix.cosentino.com/es/wp-content/uploads/2023/07/Lumire-70-Facade-MtWaverley-vic-1.jpg?auto=format%2Ccompress&ixlib=php-3.3.0" alt="Propiedad en Zona Rosa">
                         <div class="property-tag">Venta</div>
                     </div>
                     <div class="property-content">
@@ -237,7 +246,7 @@ ob_start();
                 
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="casa-modular-moderna-piscina.jpg" alt="Propiedad en Ilopango">
+                        <img src="https://imgix.cosentino.com/es/wp-content/uploads/2023/07/Lumire-70-Facade-MtWaverley-vic-1.jpg?auto=format%2Ccompress&ixlib=php-3.3.0" alt="Propiedad en Ilopango">
                         <div class="property-tag">Venta</div>
                     </div>
                     <div class="property-content">
@@ -257,7 +266,7 @@ ob_start();
                 
                 <div class="property-card">
                     <div class="property-image">
-                        <img src="casa-modular-moderna-valencia-piscina-scaled.jpg" alt="Propiedad en Santa Tecla">
+                        <img src="https://imgix.cosentino.com/es/wp-content/uploads/2023/07/Lumire-70-Facade-MtWaverley-vic-1.jpg?auto=format%2Ccompress&ixlib=php-3.3.0" alt="Propiedad en Santa Tecla">
                         <div class="property-tag">Venta</div>
                     </div>
                     <div class="property-content">

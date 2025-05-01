@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Navbar scroll effect
-  const navbar = document.querySelector(".navbar");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
+  // Header scroll effect
+  const header = document.querySelector(".navbar");
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
+        header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)";
+      } else {
+        header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+        header.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.05)";
+      }
+    });
+  }
 
   // Mobile menu toggle
   const menuToggle = document.querySelector(".menu-toggle");

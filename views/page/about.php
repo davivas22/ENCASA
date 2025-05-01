@@ -4,26 +4,7 @@ $pageScript = '/js/about.js';
 ob_start();
 // Todo el contenido de la página
 ?>
-   <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <h1>ENCASA</h1>
-                    <p>Tu mejor solución para el hogar</p>
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Acerca de</a>
-                <a href="#">Propiedades</a>
-                <a href="#">Contacto</a>
-                <a href="#" class="btn-login">Iniciar sesión</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+   <?php include_once __DIR__ . '/../includes/page/header.php';?>
 
     <!-- Hero Section -->
     <section class="hero-section">

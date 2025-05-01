@@ -1,23 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializar AOS (Animate On Scroll)
-  AOS.init({
-    duration: 800,
-    easing: "ease-out",
-    once: true,
-  });
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out",
+      once: true,
+    });
+  }
 
   // Header scroll effect
-  const header = document.querySelector(".main-header");
+  const header = document.querySelector(".navbar");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      header.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
-      header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)";
-    } else {
-      header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
-      header.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.05)";
-    }
-  });
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.style.backgroundColor = "rgba(255, 255, 255, 0.98)";
+        header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)";
+      } else {
+        header.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+        header.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.05)";
+      }
+    });
+  }
 
   // Toggle filters
   const toggleFiltersBtn = document.querySelector(".toggle-filters");
@@ -126,7 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoriteBtns = document.querySelectorAll(".favorite-btn");
 
   favoriteBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevenir navegación si está dentro de un enlace
       const icon = this.querySelector("i");
 
       if (icon.classList.contains("far")) {

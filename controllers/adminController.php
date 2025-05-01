@@ -31,7 +31,7 @@ class AdminController{
 
     public static function dashboard (Router $router){
 
-        $router->render('/admin/admin-index',[]);
+        $router->render('/admin/index',[]);
     }
 
     public static function solicitudes(Router $router){
