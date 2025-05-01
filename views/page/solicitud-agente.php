@@ -4,10 +4,11 @@ $pageScript = '/js/auth-script.js';
 ob_start();
 // Todo el contenido de la página
 ?>
-    <div class="auth-page">
+
+<div class="auth-page">
         <!-- Mitad izquierda: Formulario -->
         <div class="auth-form-side">
-            <a href="index.html" class="logo-link">
+            <a href="/" class="logo-link">
                 <div class="logo">
                     <h1>ENCASA</h1>
                     <p class="tagline">Tu mejor solución para el hogar</p>
@@ -16,39 +17,54 @@ ob_start();
             
             <div class="form-container">
                 <div class="form-header">
-                    <h2>Iniciar sesión</h2>
-                    <p>Bienvenido de nuevo, ingresa tus credenciales</p>
+                    <h2>Crea tu solicitud</h2>
                 </div>
                 
-                <form class="auth-form" action="/login" method="post">
+                <form class="auth-form" method="post" action="/solicitud-agente">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="firstname">Usuario</label>
+                            <div class="input-wrapper">
+                                <select name="usuario_id" >
+                                    <option value="<?= $_SESSION['id']?>"  selected ><?= $_SESSION['nombre']?> </option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="phone">Número telefónico</label>
                         <div class="input-wrapper">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" name="email">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="telefono">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
+                        <label for="phone">Zona de trabajo</label>
                         <div class="input-wrapper">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="contrasena" required>
-                            <button type="button" class="toggle-password">
-                                <i class="fas fa-eye"></i>
-                            </button>
+                        <i class="fas fa-envelope"></i>
+                            <input type="tel" id="phone" name="zona">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="phone">Porque quieres ser agente</label>
+                        <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                            <input type="text" id="phone" name="mensaje">
+                        </div>
+                    </div>   
                     
-                    <div class="form-options">
-                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                    </div>
                     
-                    <button type="submit" class="btn-auth">Iniciar Sesión</button>
+                    
+                    
+                    
+                    <button type="submit" class="btn-auth">Enviar solicitud</button>
                     
                     <div class="social-login">
                         <div class="divider">
-                            <span>O continúa con</span>
+                            <span>O regístrate con</span>
                         </div>
                         <div class="social-buttons">
                             <button type="button" class="social-btn">
@@ -62,11 +78,13 @@ ob_start();
                             </button>
                         </div>
                     </div>
+
+                   
+                <div class="auth-footer">
+                    <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+                </div>
                 </form>
                 
-                <div class="auth-footer">
-                    <p>¿No tienes una cuenta? <a href="/crearcuenta">Regístrate</a></p>
-                </div>
             </div>
         </div>
         
@@ -77,18 +95,15 @@ ob_start();
                     <!-- Las slides se generarán dinámicamente con JavaScript -->
                 </div>
                 
-              
-                
                 <div class="slider-controls">
                     <div class="slider-dots" id="sliderDots">
                         <!-- Los dots se generarán dinámicamente -->
                     </div>
-                    
                 </div>
             </div>
             
             <div class="slider-nav">
-                <a href="/">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#">Propiedades</a>
                 <a href="#">Contacto</a>
             </div>

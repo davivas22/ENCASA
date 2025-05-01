@@ -8,7 +8,7 @@ ob_start();
 <div class="auth-page">
         <!-- Mitad izquierda: Formulario -->
         <div class="auth-form-side">
-            <a href="index.html" class="logo-link">
+            <a href="/" class="logo-link">
                 <div class="logo">
                     <h1>ENCASA</h1>
                     <p class="tagline">Tu mejor solución para el hogar</p>
@@ -18,7 +18,6 @@ ob_start();
             <div class="form-container">
                 <div class="form-header">
                     <h2>Crear cuenta</h2>
-                    <p>Únete a nuestra comunidad y encuentra tu hogar ideal</p>
                 </div>
                 
                 <form class="auth-form" method="post" action="/crearcuenta">
@@ -92,11 +91,13 @@ ob_start();
                             </button>
                         </div>
                     </div>
-                </form>
-                
-                <div class="auth-footer">
+
+                    <div class="auth-footer">
                     <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
                 </div>
+                </form>
+                
+                
             </div>
         </div>
         
@@ -110,14 +111,6 @@ ob_start();
                 <div class="slider-controls">
                     <div class="slider-dots" id="sliderDots">
                         <!-- Los dots se generarán dinámicamente -->
-                    </div>
-                    <div class="slider-arrows">
-                        <button class="slider-arrow prev-arrow">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="slider-arrow next-arrow">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>

@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Datos de propiedades para el slider
   const properties = [
     {
-      image: "casa-modular-moderna-piscina.jpg",
+      image: "/img/casitas.avif",
     },
     {
-      image: "casa-modular-moderna-valencia-piscina-scaled.jpg",
+      image: "/img/mesa.avif",
     },
     {
-      image: "casa-modular-moderna-piscina.jpg",
+      image: "/img/techo.avif",
     },
     {
-      image: "architecture-interior-design.jpeg",
+      image: "/img/bath.avif",
     },
     {
-      image: "casa-modular-moderna-valencia-piscina-scaled.jpg",
+      image: "/img/casa-modular-moderna-valencia-piscina-scaled.webp",
     },
     {
       image: "casa-modular-moderna-piscina.jpg",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configuración del slider
   let currentSlide = 0;
-  const animationSpeed = 5000; // 5 segundos entre slides
+  const animationSpeed = 4000; // 5 segundos entre slides
   let animationInterval;
   let isAnimating = false;
 

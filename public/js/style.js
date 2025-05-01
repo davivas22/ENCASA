@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Reemplaza estas URLs con las rutas a tus propias imágenes
   const backgroundImages = [
     // Imagen 1 - Para el primer slide
-    'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/img/architecture-interior-design.webp")',
+    'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/img/casona.png")',
 
     // Imagen 2 - Para el segundo slide
     'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/img/casa-modular-moderna-piscina.webp")',

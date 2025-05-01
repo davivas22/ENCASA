@@ -93,6 +93,25 @@ class usuario extends ActiveRecord{
         }
 
        }
+
+       public static function find($columna, $valor) {
+        // Limpiar el valor recibido
+        $valor = trim($valor); // Eliminar espacios extra al inicio o final
+    
+        // Verificar que $valor no sea null antes de escapar
+        if ($valor !== null) {
+            $valor = self::$db->real_escape_string($valor);
+        } else {
+            // En caso de que sea null, asignar un valor predeterminado
+            $valor = '';
+        }
+    
+        // Realizar la consulta SQL con TRIM() para eliminar espacios al comparar
+        $query = "SELECT * FROM " . static::$tabla . " WHERE TRIM({$columna}) = '{$valor}'";
+        $resultado = self::consultarSQL($query);
+        
+        return array_shift($resultado);  // Devolver el primer registro
+    }
      
     
 }

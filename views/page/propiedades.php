@@ -5,26 +5,26 @@ ob_start();
 // Todo el contenido de la página
 ?>
     <!-- Header -->
-    <header class="main-header">
+    <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <h1>ENCASA</h1>
-                <p class="tagline">Tu mejor solución para el hogar</p>
+                <a href="index.html">
+                    <h1>ENCASA</h1>
+                    <p>Tu mejor solución para el hogar</p>
+                </a>
             </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#" class="active">Propiedades</a></li>
-                    <li><a href="#">Acerca de</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="login.html" class="contact-btn">Iniciar sesión</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Propiedades</a>
+                <a href="#">Contacto</a>
+                <a href="#" class="btn-login">Iniciar sesión</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="properties-hero">
@@ -54,8 +54,6 @@ ob_start();
                                 <option value="">Todas</option>
                                 <option value="casa">Casa</option>
                                 <option value="apartamento">Apartamento</option>
-                                <option value="terreno">Terreno</option>
-                                <option value="comercial">Comercial</option>
                             </select>
                         </div>
                         
@@ -63,11 +61,21 @@ ob_start();
                             <label>Ubicación</label>
                             <select class="filter-select">
                                 <option value="">Todas las zonas</option>
-                                <option value="zona-rosa">Zona Rosa</option>
-                                <option value="ilopango">Ilopango</option>
-                                <option value="santa-tecla">Santa Tecla</option>
+                                <option value="ahuachapan">Ahuachapán</option>
+                                <option value="sonsonate">Sonsonate</option>
+                                <option value="santa-ana">Santa Ana</option>
+                                <option value="la-libertad">La Libertad</option>
                                 <option value="san-salvador">San Salvador</option>
-                                <option value="antiguo-cuscatlan">Antiguo Cuscatlán</option>
+                                <option value="cuscatlan">Cuscatlán</option>
+                                <option value="san-vicente">San Vicente</option>
+                                <option value="cabanas">Cabañas</option>
+                                <option value="usulutan">Usulutan</option>
+                                <option value="san-miguel">San Miguel</option>
+                                <option value="morazan">Morazán</option>
+                                <option value="la-paz">La Paz</option>
+                                <option value="la-union">La union</option>
+                                
+
                             </select>
                         </div>
                         

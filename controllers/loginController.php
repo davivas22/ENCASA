@@ -21,13 +21,13 @@ class loginController{
                     if($usuario->comprobarPasswordAndVerificado($auth->contrasena)){
                         session_start();
                         $_SESSION['id'] = $usuario->id; 
-                        $_SESSION['nombre']= $usuario->nombre."". $usuario->apellido;
+                        $_SESSION['nombre']= $usuario->nombre." ". $usuario->apellido;
                         $_SESSION ['email'] = $usuario->email;
                         $_SESSION['login'] = true;
                         //Redirreccionamiento
-                        if($usuario->admin === "1"){
+                        if($usuario->rol === "admin"){
                             $_SESSION['admin']=$usuario-> admin ?? null;
-                            header('Location: /admin-panel');
+                            header('Location: /admin-agentes');
                         }else{
                             header('Location: /');
                         }

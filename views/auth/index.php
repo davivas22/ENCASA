@@ -30,7 +30,7 @@ ob_start();
                             <ul class="lista-opciones">
                             <li><a href="/perfil"><i class="fas fa-user"></i> Mi perfil</a></li>
                             <li><a href="/favoritos"><i class="fas fa-heart"></i> Mis favoritos</a></li>
-                            <li><a href="/mensajes"><i class="fas fa-envelope"></i> Mensajes</a></li>
+                            <li><a href="/solicitud-agente"><i class="fas fa-envelope"></i> Convertirte en agente</a></li>
                             <li><a href="/propiedades"><i class="fas fa-home"></i> Mis propiedades</a></li>
                             <li><a href="/configuracion"><i class="fas fa-cog"></i> Configuración</a></li>
                             <li><a href="/cerrarsesion" class="contact-btn">Cerrar sesión</a></li>
@@ -230,7 +230,7 @@ ob_start();
                         </div>
                         <div class="property-footer">
                             <p class="property-price">$245,000</p>
-                            <a href="#" class="btn-small">Ver detalles</a>
+                            <a href="/ver-propiedades" class="btn-small">Ver detalles</a>
                         </div>
                     </div>
                 </div>
@@ -250,7 +250,7 @@ ob_start();
                         </div>
                         <div class="property-footer">
                             <p class="property-price">$135,000</p>
-                            <a href="#" class="btn-small">Ver detalles</a>
+                            <a href="/ver-propiedades" class="btn-small">Ver detalles</a>
                         </div>
                     </div>
                 </div>
@@ -270,7 +270,7 @@ ob_start();
                         </div>
                         <div class="property-footer">
                             <p class="property-price">$320,000</p>
-                            <a href="#" class="btn-small">Ver detalles</a>
+                            <a href="/ver-propiedades" class="btn-small">Ver detalles</a>
                         </div>
                     </div>
                 </div>

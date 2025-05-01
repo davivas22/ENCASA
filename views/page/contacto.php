@@ -7,24 +7,21 @@ ob_start();
    <!-- Navbar -->
    <nav class="navbar">
         <div class="container">
-            <div class="navbar-content">
-                <div class="logo">
-                    <a href="index.html">
-                        <span class="logo-text">ENCASA</span>
-                    </a>
-                </div>
-                
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about-section.html" class="nav-link">Acerca de</a></li>
-                    <li class="nav-item"><a href="properties.html" class="nav-link">Propiedades</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contacto</a></li>
-                    <li class="nav-item nav-button"><a href="login.html" class="btn-login">Iniciar sesión</a></li>
-                </ul>
+            <div class="logo">
+                <a href="index.html">
+                    <h1>ENCASA</h1>
+                    <p>Tu mejor solución para el hogar</p>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Propiedades</a>
+                <a href="#">Contacto</a>
+                <a href="#" class="btn-login">Iniciar sesión</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>

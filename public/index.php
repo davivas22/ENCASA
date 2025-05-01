@@ -17,7 +17,7 @@ $router->post('/login',[loginController::class,'login'] );
 $router->get('/cerrarsesion', [loginController::class,'cerrarsesion'] );
 
 
-//recuperar password
+//RECUPERAR PASSWORD
 $router->get('/olvide',[loginController::class,'olvide'] );
 $router->post('/olvide',[loginController::class,'olvide'] );
 $router->get('/recuperar',[loginController::class,'recuperar'] );
@@ -47,19 +47,40 @@ $router->post('/about',[HomeController::class,'about']);
 $router->get('/contacto',[HomeController::class,'contacto']);
 $router->post('/contacto',[HomeController::class,'contacto']);
 
+//SOLICITUD DE AGENTE
 
+$router->get('/solicitud-agente',[HomeController::class,'solicitud']);
+$router->post('/solicitud-agente',[HomeController::class,'solicitud']);
 
 
 
 //ADMINISTRADOR
 
-$router->get('/admin-panel',[AdminController::class,'panel']);
-$router->post('/admin-panel',[AdminController::class,'panel']);
+$router->get('/admin-reportes',[AdminController::class,'reportes']);
+$router->post('/admin-reportes',[AdminController::class,'reportes']);
+
+$router->get('/index',[AdminController::class,'dashboard']);
+$router->post('/index',[AdminController::class,'dashboard']);
+
+$router->get('/admin-propiedades',[AdminController::class,'propiedades']);
+$router->post('/admin-propiedades',[AdminController::class,'propiedades']);
+
+$router->get('/admin-configuracion',[AdminController::class,'configuracion']);
+$router->post('/admin-configuracion',[AdminController::class,'configuracion']);
+
+$router->get('/admin-agentes',[AdminController::class,'panel']);
+$router->post('/admin-agentes',[AdminController::class,'panel']);
+
+$router->get('/solicitudes',[AdminController::class,'solicitudes']);
+$router->post('/solicitudes',[AdminController::class,'solicitudes']);
 
 //PROPIEDAD
 
-$router->get('/propiedades',[AdminController::class,'propiedades']);
-$router->post('/propiedades',[AdminController::class,'propiedades']);
+$router->get('/propiedades',[HomeController::class,'propiedades']);
+$router->post('/propiedades',[HomeController::class,'propiedades']);
+
+$router->get('/ver-propiedades',[HomeController::class,'verpropiedades']);
+$router->post('/ver-propiedades',[HomeController::class,'verpropiedades']);
 
 
 
