@@ -34,7 +34,7 @@
                     <div class="tabs">
                         <button class="tab-btn active" data-tab="active-agents">Agentes Activos <span class="badge">0</span></button>
                         <a href="/solicitudes" class="tab-btn">
-                        Solicitudes <span class="badge">0</span>
+                        Solicitudes <span class="badge"></span>
                         </a>
 
                     </div>

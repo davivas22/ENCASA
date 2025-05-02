@@ -21,6 +21,10 @@ ob_start();
                 </div>
                 
                 <form class="auth-form" method="post" action="/crearcuenta">
+
+                <?php foreach($errores as $error):?>
+
+                    <?php endforeach;?>
                     <div class="form-row">
                         <div class="form-group half">
                             <label for="firstname">Nombres</label>

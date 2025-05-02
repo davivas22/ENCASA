@@ -114,4 +114,33 @@ class Solicitud_agente extends ActiveRecord{
     return usuario::find('id',$this->usuario_id);
    }
 
+   public function actualizarSolicitud() {
+    // Sanitizar los datos
+    $atributos = $this->sanitizarAtributos();
+
+    // Solo incluir atributos que no sean nulos ni vacíos
+    $valores = [];
+    foreach($atributos as $key => $value) {
+        if ($value !== null && $value !== '') {
+            $valorEscapado = self::$db->escape_string($value);
+            $valores[] = "{$key} = '{$valorEscapado}'";
+        }
+    }
+
+    // Verificamos que haya al menos un valor a actualizar
+    if (empty($valores)) {
+        throw new Exception("No hay datos válidos para actualizar");
+    }
+
+    // Construimos la consulta SQL
+    $query = "UPDATE " . static::$tabla . " SET ";
+    $query .= join(', ', $valores);
+    $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
+    $query .= " LIMIT 1";
+
+    // Ejecutamos
+    return self::$db->query($query);
+}
+
+
 }

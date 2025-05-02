@@ -37,21 +37,40 @@
                     
                 </div>
                 <?php foreach($solicitudes as $solicitud): ?>
-                    <?php $usuario = $solicitud->getUsuario(); ?>
-                <div class="card">
-                    <h3><?= $usuario->nombre?></h3>
-                    <p><strong>Email:</strong> <?= $usuario->email?></p>
-                    <p><strong>Teléfono:</strong> <?=$solicitud->getTelefono(); ?></p>
-                    <p><strong>Mensaje:</strong> <?= $solicitud->getMensaje();?></p>
-                    <div class="status">
-                    <span class="badge">Pendiente</span>
-                    <div>
-                        <button class="btn btn-approve">Aceptar</button>
-                        <button class="btn btn-reject">Rechazar</button>
-                    </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+                    <?php if($solicitud->getEstado() == 'pendiente'):?>
+
+                                <?php $usuario = $solicitud->getUsuario(); ?>
+                        <div class="card">
+                            <h3><?= $usuario->nombre?></h3>
+                            <p><strong>Email:</strong> <?= $usuario->email?></p>
+                            <p><strong>Teléfono:</strong> <?=$solicitud->getTelefono(); ?></p>
+                            <p><strong>Mensaje:</strong> <?= $solicitud->getMensaje();?></p>
+                            <div class="status">
+                            <span class="badge">Pendiente</span>
+                            <div>
+                            <div class="acciones">
+                                <form method="POST" action="/procesar">
+                                    <input type="hidden" name="usuario_id" value=" <?= $usuario->id ?>">
+                                    <input type="hidden" name="solicitud_id" value="<?= $solicitud->getId(); ?>">
+                                    <input type="hidden" name="accion" value="aprobado">
+                                    <button type="submit" class="btn btn-approve">Aceptar</button>
+                                </form>
+                                <form method="POST" action="/procesar">
+                                    <input type="hidden" name="solicitud_id" value="<?= $solicitud->getId(); ?>">
+                                    <input type="hidden" name="accion" value="rechazado">
+                                    <button type="submit" class="btn btn-reject">Rechazar</button>
+                                </form>
+                            </div>
+
+                            </div>
+                            </div>
+                        </div>
+                        <?php endif;?>
+                        <?php endforeach; ?>
+
+
+                       
+                   
 
                 <!-- Active Agents Tab -->
                

@@ -23,6 +23,33 @@ class HomeController{
         $router->render('/page/ver-propiedades',[]);
       }
 
+      //INTERFAZ DE AGENTES **********************************************************
+      public static function agenteagregarpropiedad(Router $router){
+        $router->render('/agentes/agente-agregar-propiedad',[]);
+      }
+      
+      public static function agenteconfiguracion(Router $router){
+        $router->render('/agentes/agente-configuracion',[]);
+      }
+      
+      public static function agentedashboard(Router $router){
+        $router->render('/agentes/agente-dashboard',[]);
+      }
+      
+      public static function agenteperfil(Router $router){
+        $router->render('/agentes/agente-perfil',[]);
+      }
+      
+      public static function agentepropiedades(Router $router){
+        $router->render('/agentes/agente-propiedades',[]);
+      }
+
+      //****************************************************************************** */
+      
+      public static function agentesolicitud(Router $router){
+        $router->render('/agentes/agente-solicitudes',[]);
+      }
+
       public static function solicitud(Router $router){
 
 

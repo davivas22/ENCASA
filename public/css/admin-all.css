@@ -1578,3 +1578,13 @@ tr:hover {
   font-size: 0.75em;
   color: #333;
 }
+
+.acciones {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.acciones form {
+  margin: 0;
+}

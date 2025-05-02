@@ -28,6 +28,45 @@ class Propiedad extends ActiveRecord{
         $this->tamaño = $args['tamaño'] ?? null;
 
     }
+    public function validar() {
+        $errores = [];
+    
+        if (!$this->titulo || strlen(trim($this->titulo)) === 0) {
+            $errores[] = "El título es obligatorio.";
+        }
+    
+        if (!$this->precio || !is_numeric($this->precio) || $this->precio <= 0) {
+            $errores[] = "El precio debe ser un número positivo.";
+        }
+    
+        if (!$this->imagen || strlen(trim($this->imagen)) === 0) {
+            $errores[] = "La imagen es obligatoria.";
+        }
+    
+        if (!$this->descripcion || strlen(trim($this->descripcion)) < 50) {
+            $errores[] = "La descripción es obligatoria y debe tener al menos 50 caracteres.";
+        }
+    
+        if (!$this->habitaciones || !is_numeric($this->habitaciones) || $this->habitaciones <= 0) {
+            $errores[] = "El número de habitaciones debe ser un número positivo.";
+        }
+    
+        if (!$this->wc || !is_numeric($this->wc) || $this->wc <= 0) {
+            $errores[] = "El número de baños debe ser un número positivo.";
+        }
+    
+        if (!$this->estacionamiento || !is_numeric($this->estacionamiento) || $this->estacionamiento < 0) {
+            $errores[] = "El número de lugares de estacionamiento debe ser 0 o mayor.";
+        }
+    
+        if (!$this->tamaño || !is_numeric($this->tamaño) || $this->tamaño <= 0) {
+            $errores[] = "El tamaño debe ser un número positivo.";
+        }
+    
+        return $errores;
+    }
+
+    
 
      // Getters
      public function getTitulo()
@@ -112,3 +151,4 @@ class Propiedad extends ActiveRecord{
      }
 
 }
+

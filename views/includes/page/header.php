@@ -2,7 +2,7 @@
 <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
+                <a href="/">
                     <h1>ENCASA</h1>
                     <p>Tu mejor solución para el hogar</p>
                 </a>
@@ -13,7 +13,10 @@
                 <a href="/propiedades">Propiedades</a>
                 <a href="/contacto">Contacto</a>
                 <?php if(!isset($_SESSION['login'])): ?>
-                    <li><a href="/login" class="contact-btn">Iniciar sesión</a></li>
+                    <li><a href="/login" class="btn-login">Iniciar sesión</a></li>
+                    <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
                     <?php else: ?>
                         <div class="menu-usuario">
                         <details class="detalles-usuario">

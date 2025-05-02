@@ -68,11 +68,15 @@ $router->post('/admin-propiedades',[AdminController::class,'propiedades']);
 $router->get('/admin-configuracion',[AdminController::class,'configuracion']);
 $router->post('/admin-configuracion',[AdminController::class,'configuracion']);
 
+//SECCION DE AGENTES
 $router->get('/admin-agentes',[AdminController::class,'panel']);
 $router->post('/admin-agentes',[AdminController::class,'panel']);
-
+//APARTADO DE SOLICITUDES
 $router->get('/solicitudes',[AdminController::class,'solicitudes']);
 $router->post('/solicitudes',[AdminController::class,'solicitudes']);
+//FORMULARIOS PARA ACEPTAR O RECHAZAR SOLICITUD
+$router->post('/procesar',[AdminController::class,'procesar']);
+
 
 //PROPIEDAD
 
@@ -83,8 +87,25 @@ $router->get('/ver-propiedades',[HomeController::class,'verpropiedades']);
 $router->post('/ver-propiedades',[HomeController::class,'verpropiedades']);
 
 
+//PANEL DE AGENTES
 
+$router->get('/agente-agregar-propiedad',[HomeController::class,'agenteagregarpropiedad']);
+$router->post('/agente-agregar-propiedad',[HomeController::class,'agenteagregarpropiedad']);
 
+$router->get('/agente-configuracion',[HomeController::class,'agenteconfiguracion']);
+$router->post('/agente-configuracion',[HomeController::class,'agenteconfiguracion']);
+
+$router->get('/agente-dashboard',[HomeController::class,'agentedashboard']);
+$router->post('/agente-dashboard',[HomeController::class,'agentedashboard']);
+
+$router->get('/agente-perfil',[HomeController::class,'agenteperfil']);
+$router->post('/agente-perfil',[HomeController::class,'agenteperfil']);
+
+$router->get('/agente-propiedades',[HomeController::class,'agentepropiedades']);
+$router->post('/agente-propiedades',[HomeController::class,'agentepropiedades']);
+
+$router->get('/agente-solicitudes',[HomeController::class,'agentesolicitud']);
+$router->post('/agente-solicitudes',[HomeController::class,'agentesolicitud']);
 
 
 

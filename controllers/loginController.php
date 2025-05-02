@@ -26,13 +26,17 @@ class loginController{
                         $_SESSION['login'] = true;
                         //Redirreccionamiento
                         if($usuario->rol === "admin"){
-                            $_SESSION['admin']=$usuario-> admin ?? null;
+                            $_SESSION['admin']=$usuario->rol ?? null;
                             header('Location: /admin-agentes');
+                        }elseif($usuario->rol === 'agente'){
+                            $_SESSION['agente']=$usuario->rol ?? null;
+                            header('Location: /');
                         }else{
                             header('Location: /');
                         }
+                            
+                        
 
-                        debuguear($_SESSION);
                     } 
 
                     
@@ -67,19 +71,19 @@ class loginController{
     public static function crear(Router $router){
         $usuario = new usuario;
        
-        $alertas=[];
+        $errores=[];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $usuario ->sincronizar($_POST);    
-            $alertas = $usuario->validarNuevaCuenta();
+            $errores= $usuario->validar();
            
             //REVISAR QUE ALERTAS ESTE VACIO
-            if(empty($alertas)){
+            if(empty($errores)){
                 //VERIFICAR QUE EL USUARIO NO EXISTE
                 $resultado= $usuario->existeUsuario();
 
                 if($resultado->num_rows){
-                    $alertas = $usuario->getAlertas();
+                    $errores = ['Usuario ya existente'];
                 }else{
                     //HASH la contrasena
                     $usuario->hashPassword();
@@ -92,6 +96,7 @@ class loginController{
                     //CREAR EL USUARIO
                     $resultado = $usuario->guardar();
                     if($resultado){
+                        
                         header('Location:/mensaje');
                     }
                    
@@ -101,7 +106,7 @@ class loginController{
         }
         $router->render('auth/crearCuenta',[
             'usuario'=> $usuario,
-            'alertas' =>$alertas
+            'errores' =>$errores
         ]);
 
     }

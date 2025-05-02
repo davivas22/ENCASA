@@ -19,6 +19,9 @@ ob_start();
                     <li><a href="/about">Acerca de</a></li>
                     <li><a href="/propiedades">Propiedades</a></li>
                     <li><a href="/contacto">Contacto</a></li>
+                    <?php if(isset($_SESSION['agente'])):?>
+                    <li><a href="/agente-dashboard"> Gestion </a></li>
+                    <?php endif;?>
                     <?php if(!isset($_SESSION['login'])): ?>
                     <li><a href="/login" class="contact-btn">Iniciar sesión</a></li>
                     <?php else: ?>
@@ -30,7 +33,9 @@ ob_start();
                             <ul class="lista-opciones">
                             <li><a href="/perfil"><i class="fas fa-user"></i> Mi perfil</a></li>
                             <li><a href="/favoritos"><i class="fas fa-heart"></i> Mis favoritos</a></li>
+                            <?php if(!isset($_SESSION['agente'])):?>
                             <li><a href="/solicitud-agente"><i class="fas fa-envelope"></i> Convertirte en agente</a></li>
+                            <?php endif;?>
                             <li><a href="/propiedades"><i class="fas fa-home"></i> Mis propiedades</a></li>
                             <li><a href="/configuracion"><i class="fas fa-cog"></i> Configuración</a></li>
                             <li><a href="/cerrarsesion" class="contact-btn">Cerrar sesión</a></li>
@@ -38,6 +43,8 @@ ob_start();
                         </details>
                         </div>
                       <?php endif;?>
+
+                     
                 </ul>
             </nav>
          

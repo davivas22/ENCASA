@@ -44,6 +44,23 @@ class AdminController{
             'solicitudes' => $solicitudes
         ]);
     }
+    public static function procesar (Router $router){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $solicitud = new Solicitud_agente();
+            $solicitud->setId($_POST['solicitud_id']);
+             $solicitud->setEstado($_POST['accion']);
+             $asociado = new usuario();
+            $encontrado = $asociado::find('id',$_POST['usuario_id']);
+                if($encontrado){
+                    $encontrado->setRol('agente')->actualizar();
+                    $solicitud->actualizarSolicitud();
+                }
+             
+             
+             header('location: /solicitudes');
+            
+        }
+    }
     
 
     

@@ -112,6 +112,12 @@ class usuario extends ActiveRecord{
         
         return array_shift($resultado);  // Devolver el primer registro
     }
+
+    public function setRol($rol) {
+        $this->rol = $rol;
+        return $this;
+    }
+    
      
     
 }

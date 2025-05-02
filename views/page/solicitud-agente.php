@@ -30,8 +30,8 @@ ob_start();
                                 </select>
                             </div>
                         </div>
-                        
                     </div>
+
                     <div class="form-group">
                         <label for="phone">Número telefónico</label>
                         <div class="input-wrapper">
@@ -103,7 +103,7 @@ ob_start();
             </div>
             
             <div class="slider-nav">
-                <a href="index.html">Home</a>
+                <a href="-">Home</a>
                 <a href="#">Propiedades</a>
                 <a href="#">Contacto</a>
             </div>

@@ -123,7 +123,7 @@ ob_start();
             <div class="team-leaders">
                 <div class="team-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Jimmy Rodríguez">
+                        <img src="https://media.istockphoto.com/id/140462837/es/foto/linda-cerdo-apoyarse-sobre-la-baranda-de-la-cuna.jpg?s=612x612&w=0&k=20&c=s5JWs0NPQiqyVCT1u5qBSYwLDkKzMCXAwtkqakCB8Lc=" alt="Jimmy Rodríguez">
                         <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -131,7 +131,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="card-content">
-                        <h3>Jimmy Rodríguez</h3>
+                        <h3>Jimmy Peña</h3>
                         <span class="position">Fundador & CEO</span>
                         <p>Con una visión innovadora y un compromiso inquebrantable con la excelencia, Jimmy lidera ENCASA desde su reciente fundación, aportando su pasión por el sector inmobiliario.</p>
                         <div class="contact-info">
@@ -157,7 +157,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="card-content">
-                        <h3>Steven Martínez</h3>
+                        <h3>Steven Quevedo</h3>
                         <span class="position">Fundador & Director de Operaciones</span>
                         <p>Especialista en gestión inmobiliaria y desarrollo de proyectos, Steven aporta su conocimiento y entusiasmo para impulsar el crecimiento de ENCASA en El Salvador.</p>
                         <div class="contact-info">
@@ -175,7 +175,7 @@ ob_start();
                 
                 <div class="team-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Samuel Hernández">
+                        <img src="https://images.cults3d.com/7N7stDIDIoYFpLo7f_FCruK9njE=/516x516/filters:no_upscale()/https://fbi.cults3d.com/uploaders/15556264/illustration-file/f71390c9-f908-4aa4-aefd-4bc895c2eb9a/8.png" alt="Samuel Hernández">
                         <div class="social-links">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -183,7 +183,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="card-content">
-                        <h3>Samuel Hernández</h3>
+                        <h3>Samuel Menjivar</h3>
                         <span class="position">Fundador & Director Comercial</span>
                         <p>Con formación en ventas y marketing inmobiliario, Samuel desarrolla estrategias innovadoras para posicionar a ENCASA como una nueva referencia en el mercado salvadoreño.</p>
                         <div class="contact-info">
